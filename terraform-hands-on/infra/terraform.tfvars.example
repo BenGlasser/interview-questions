@@ -1,0 +1,24 @@
+# Copy this file to terraform.tfvars and customize as needed
+
+# AWS Configuration
+aws_region   = "us-east-1"
+project_name = "terraform-challenge"
+environment  = "challenge"
+
+# Network Configuration
+vpc_cidr           = "10.0.0.0/16"
+app_subnet_cidrs   = ["10.0.1.0/24", "10.0.2.0/24"]
+data_subnet_cidrs  = ["10.0.11.0/24", "10.0.12.0/24"]
+
+# Redis Configuration
+redis_node_type = "cache.t3.micro"
+redis_port      = 6379
+
+# App Runner Configuration
+app_runner_cpu    = "1 vCPU"
+app_runner_memory = "2 GB"
+
+# Cost Optimization
+# Set to true only if you need private subnet internet access
+# (increases cost by ~$32/month for NAT Gateway)
+enable_nat_gateway = false
